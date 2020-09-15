@@ -1,0 +1,13 @@
+mixin outputRating(rating)
+  - for(let i = 1; i <= rating; i++)
+    span.glyphicon.glyphicon-star
+  - for(i = rating; i < 5; i++)
+    span.glyphicon.glyphicon-star-empty
+mixin formatDate(dateString)
+  - let date = new Date(dateString);
+  - let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  - let d = date.getDate();
+  - let m = monthNames[date.getMonth()];
+  - let y = date.getFullYear();
+  - let output = d + " " + m + " " + y;
+  =output

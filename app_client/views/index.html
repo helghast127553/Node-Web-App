@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/bootstrap/css/amelia.bootstrap.min.css">
+    <link rel="stylesheet" href="/public/stylesheets/style.css">
+</head>
+<body ng-app="Loc8rApp">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Loc8r</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse", data-target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar-main" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/about/"> About</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/signin/">Sign in</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <ng-view></ng-view>
+        <footer>
+            <div class="row">
+                <div class="col-xs-12">
+                    <small> &copy; Simon Holmes 2014 </small>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/public/angular/angular.min.js"></script>
+    <script src="/public/angular/angular-route.min.js"></script>
+    <script src="../routes/routes.js"></script>
+    <script src="../controllers/homeController.js"></script>
+    <script src="../controllers/locationInfoController.js"></script>
+    <script src="../controllers/reviewController.js"></script>
+    <script src="../directives/outputRating.directive.js"></script>
+    <script src="../directives/formateDate.directive.js"></script>
+    <script src="../directives/formatString.directive.js"></script>
+</body>
+</html>

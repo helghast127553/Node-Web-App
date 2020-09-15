@@ -1,0 +1,35 @@
+<div id="banner" class="page-header" ng-controller="homeController">
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>
+                {{locations.pageHeader.title}}
+                <small>&nbsp; {{locations.pageHeader.strapline}}</small>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-8">
+            <div class="error">{{locations.message}}</div>
+            <div class="row list-group">
+                <div ng-repeat="location in locations.data" class="col-xs-12 list-group-item">
+                    <h4>
+                        <a ng-href="/location/{{location._id}}">{{location.name}}</a>
+                        <small>&nbsp;                  
+                            <output-rating rating="{{location.rating}}"></output-rating>
+                        </small>
+                    </h4>
+                    <p class="address">{{location.address}}</p>
+                    <p>
+                        <span ng-repeat="facility in location.facilities">
+                            <span class="label label-warning">{{facility}}</span>
+                            &nbsp;
+                        </span>                         
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <p class="lead">{{locations.sidebar}}</p>
+        </div>
+    </div>
+</div>
